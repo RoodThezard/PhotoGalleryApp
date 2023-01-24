@@ -1,6 +1,7 @@
 package com.example.photogalleryapp.models;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,28 +17,9 @@ public class albumModel {
 		photos = new ArrayList<photoModel>();
 	}
 
-	public albumModel(String albumName, String file) throws IOException {
+	public albumModel(String albumName, ArrayList<photoModel> photos) throws IOException {
 		this.albumName = albumName;
-		photos = new ArrayList<photoModel>();
-		BufferedReader br = new BufferedReader(new FileReader(file));
-		String st;
-		while ((st = br.readLine()) != null) {
-			String url = st;
-			String caption = br.readLine();
-			int tagNum = Integer.parseInt(br.readLine());
-			HashMap<String, ArrayList<String>> tags = new HashMap<String, ArrayList<String>>();
-			for(int i = 0; i < tagNum; i++) {
-				String[] tagEntry = br.readLine().split("=", 2);
-				tags.put(tagEntry[0], new ArrayList<String>(Arrays.asList(tagEntry[1].split("\\s*,\\s*"))));
-			}	
-			try {
-				photoModel photo = new photoModel(url, caption, tags);
-				addPhoto(photo);
-				
-			}catch(IllegalArgumentException e) {
-				continue;
-			}	
-		}
+		this.photos = photos;
 	}
 	
 	public void addPhoto(photoModel photo) {
@@ -84,18 +66,6 @@ public class albumModel {
 	    	beginDateStr = "--/--/--";
 	    }
 	    return beginDateStr + " - " + endDateStr;
-	}
-	
-	public void convert2TextFile(String userName) throws IOException {
-		File albumFile = new File("src/model/data/" + userName + "/"  + albumName + ".txt");
-		albumFile.createNewFile();
-		BufferedWriter writer = new BufferedWriter(new FileWriter("src/model/data/" + userName + "/"  +  albumName + ".txt", false));
-		for(photoModel photo : photos) {
-			writer.write(photo.toString());
-			writer.newLine();
-		}
-		writer.close();
-		
 	}
 }
 

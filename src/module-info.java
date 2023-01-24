@@ -5,6 +5,6 @@ module com.example.photogalleryapp {
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
 
-    opens com.example.photogalleryapp to javafx.fxml;
+    opens com.example.photogalleryapp.controllers to javafx.fxml;
     exports com.example.photogalleryapp;
 }

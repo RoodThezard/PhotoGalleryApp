@@ -2,6 +2,7 @@ package com.example.photogalleryapp.controllers;
 
 import com.example.photogalleryapp.models.albumModel;
 import com.example.photogalleryapp.models.userModel;
+import com.example.photogalleryapp.services.photosFileIO;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -40,10 +41,10 @@ public class albumsPageController {
 	
 	public void createAlbum(ActionEvent e) throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/createAlbumPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/createAlbumPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
-		
-		user.convert2TextFile();
+
+		photosFileIO.convertUserToTextFile(user);
 		
 		createAlbumPageController createAlbumPageController = loader.getController();
 		createAlbumPageController.start(mainStage, user);
@@ -55,7 +56,7 @@ public class albumsPageController {
 	
 	public void logout(ActionEvent e) throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/loginPage.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/loginPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
 		
 		
@@ -70,7 +71,7 @@ public class albumsPageController {
 	public void search(ActionEvent e) throws IOException{
 		Stage popupStage = new Stage();
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/searchPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/searchPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
 		
 		searchPageController searchPageController = loader.getController();
@@ -99,7 +100,7 @@ public class albumsPageController {
 	private ImageView createAlbumImageView(albumModel album) throws FileNotFoundException {
 		final Image thumbNail;
 		if(album.getPhotos().size() == 0) {
-			thumbNail = new Image("resources/stockPhotos/friends.jpg", 100, 150, true, true);
+			thumbNail = new Image("/resources/stockPhotos/friends.jpg", 100, 150, true, true);
 
 		}else {
 			thumbNail = new Image(new FileInputStream(album.getPhotos().get(0).getImageFile()), 100, 150, true, true);
@@ -117,7 +118,6 @@ public class albumsPageController {
 						openAlbum(selectedAlbum);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
-						System.out.println();
 					}
 				}else if(e.getButton() == MouseButton.SECONDARY) {
 					albumMenu.show(imageView, e.getScreenX(), e.getScreenY());
@@ -141,7 +141,6 @@ public class albumsPageController {
 			final Button check = (Button) dialog.getDialogPane().lookupButton(ButtonType.OK);
 			check.addEventFilter(ActionEvent.ACTION, (ActionEvent ev) ->{
 				if(user.albumNameInUse(result.get())) {
-					System.out.println("in use");
 					ev.consume();
 				}
 			});
@@ -181,7 +180,7 @@ public class albumsPageController {
 	
 	private void openAlbum(albumModel album) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/albumPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/albumPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
 
 		albumPageController albumPageController = loader.getController();

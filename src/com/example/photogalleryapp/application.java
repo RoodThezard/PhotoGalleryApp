@@ -19,8 +19,7 @@ public class application extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        URL fxmlLocation = getClass().getResource("/loginPageView.fxml");
-        System.out.println(fxmlLocation);
+        URL fxmlLocation = getClass().getResource("/com/example/photogalleryapp/views/loginPageView.fxml");
         loader.setLocation(fxmlLocation);
 
         GridPane root = loader.load();

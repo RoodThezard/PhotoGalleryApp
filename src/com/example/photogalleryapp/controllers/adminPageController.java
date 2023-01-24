@@ -31,7 +31,7 @@ public class adminPageController {
 	
 	public void logout(ActionEvent e) throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/loginPage.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/loginPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
 		
 		photosFileIO.storeData(users);

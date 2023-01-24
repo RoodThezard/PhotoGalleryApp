@@ -82,7 +82,7 @@ public class searchPageController {
 	private void searchResults(ArrayList<photoModel> photos) {
 		popupStage.close();
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/searchResultsPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/searchResultsPageView.fxml"));
 		GridPane root;
 		try {
 			root = (GridPane)loader.load();

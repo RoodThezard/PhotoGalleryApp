@@ -5,43 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b036abe1-9945-4887-9e80-bebbee2f4107" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/stockPhotos/friends.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/stockPhotos/newyorkcity.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/stockPhotos/programmer.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/stockPhotos/rutgers.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/stockPhotos/rutgersfootball.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/stockPhotos/softwaredev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/addPhotoPopupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/adminPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/albumPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/albumsPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/copyToAlbumPopupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/createAlbumPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/loginPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/moveToAlbumPopupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/photoPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/searchPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/searchResultsPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/slideShowPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/models/albumModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/models/photoModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/models/userModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/services/photosFileIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/addPhotoPopupView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/adminPageView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/albumPageView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/albumsPageView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/copyToAlbumPopupView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/createAlbumPageView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/loginPageView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/moveToAlbumPopupView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/photoPageView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/searchPageView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/searchResultsPageView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/views/slideShowPageView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/addPhotoPopupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/addPhotoPopupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/adminPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/adminPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/albumPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/albumPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/albumsPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/albumsPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/createAlbumPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/createAlbumPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/loginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/loginPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/photoPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/photoPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/searchPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/searchPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/searchResultsPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/searchResultsPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/slideShowPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/controllers/slideShowPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/models/albumModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/models/albumModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/models/userModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/models/userModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/photogalleryapp/services/photosFileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/photogalleryapp/services/photosFileIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,11 +91,29 @@
       <option name="project" value="LOCAL" />
       <updated>1674577414417</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added models, controllers, services and views">
+      <created>1674583728710</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674583728710</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created application main class and added mvc project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created application main class and added mvc project structure" />
+    <MESSAGE value="Added models, controllers, services and views" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added models, controllers, services and views" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

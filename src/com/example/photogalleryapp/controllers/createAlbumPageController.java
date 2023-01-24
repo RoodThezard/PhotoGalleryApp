@@ -3,6 +3,7 @@ package com.example.photogalleryapp.controllers;
 import com.example.photogalleryapp.models.albumModel;
 import com.example.photogalleryapp.models.photoModel;
 import com.example.photogalleryapp.models.userModel;
+import com.example.photogalleryapp.services.photosFileIO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,7 +46,7 @@ public class createAlbumPageController {
 	
 	public void cancel(ActionEvent e) throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/albumsPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/albumsPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
 		
 		albumsPageController albumsPageController = loader.getController();
@@ -58,10 +59,10 @@ public class createAlbumPageController {
 	
 	public void logout(ActionEvent e) throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/loginPage.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/loginPage.fxml"));
 		GridPane root = (GridPane)loader.load();
-		
-		user.convert2TextFile();
+
+		photosFileIO.convertUserToTextFile(user);
 		
 		loginPageController loginPageController = loader.getController();
 		loginPageController.start(mainStage);
@@ -80,10 +81,10 @@ public class createAlbumPageController {
 
 		newAlbum.setAlbumName(albumNameField.getText());
 		user.addAlbum(newAlbum);
-		user.convert2TextFile();
+		photosFileIO.convertUserToTextFile(user);
 		
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/albumsPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/albumsPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
 		
 		albumsPageController albumsPageController = loader.getController();
@@ -97,7 +98,7 @@ public class createAlbumPageController {
 	public void addPhoto(ActionEvent e) throws IOException{
 		Stage popupStage = new Stage();
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/addPhotoPopupView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/addPhotoPopupView.fxml"));
 		Pane root = (Pane)loader.load();
 		
 		addPhotoPopupController addPhotoPopupController = loader.getController();
@@ -134,8 +135,8 @@ public class createAlbumPageController {
 	}
 	
 	private ImageView createPhotoImageView(photoModel photo) throws FileNotFoundException {
-		final Image thmbNail = new Image(new FileInputStream(photo.getImageFile()), 100, 150, true, true);
-		ImageView imageView = new ImageView(thmbNail);
+		final Image thumbNail = new Image(new FileInputStream(photo.getImageFile()), 100, 150, true, true);
+		ImageView imageView = new ImageView(thumbNail);
 		return imageView;
 	}
 }

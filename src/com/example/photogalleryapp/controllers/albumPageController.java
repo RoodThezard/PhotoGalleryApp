@@ -3,6 +3,7 @@ package com.example.photogalleryapp.controllers;
 import com.example.photogalleryapp.models.albumModel;
 import com.example.photogalleryapp.models.photoModel;
 import com.example.photogalleryapp.models.userModel;
+import com.example.photogalleryapp.services.photosFileIO;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -43,10 +44,10 @@ public class albumPageController {
 	
 	public void logout(ActionEvent e) throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/loginPage.fxml"));
-		GridPane root = (GridPane)loader.load();
-		
-		user.convert2TextFile();
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/loginPageView.fxml"));
+		GridPane root = loader.load();
+
+		photosFileIO.convertUserToTextFile(user);
 		
 		loginPageController loginPageController = loader.getController();
 		loginPageController.start(mainStage);
@@ -58,7 +59,7 @@ public class albumPageController {
 	
 	public void goBack(ActionEvent e) throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/albumsPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/albumsPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
 		
 		albumsPageController albumsPageController = loader.getController();
@@ -71,7 +72,7 @@ public class albumPageController {
 	
 	public void slideShow(ActionEvent e) throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/slideShowPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/slideShowPageView.fxml"));
 		AnchorPane root = (AnchorPane)loader.load();
 		
 		slideShowPageController slideShowPageController = loader.getController();
@@ -85,7 +86,7 @@ public class albumPageController {
 	public void addPhoto(ActionEvent e) throws IOException{
 		Stage popupStage = new Stage();
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/addPhotoPopupView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/addPhotoPopupView.fxml"));
 		Pane root = (Pane)loader.load();
 		
 		addPhotoPopupController addPhotoPopupController = loader.getController();
@@ -132,7 +133,7 @@ public class albumPageController {
 			public void handle(MouseEvent e) {
 				if(e.getButton() == MouseButton.PRIMARY) {
 					FXMLLoader loader = new FXMLLoader();
-					loader.setLocation(getClass().getResource("/view/photoPageView.fxml"));
+					loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/photoPageView.fxml"));
 					GridPane root;
 					try {
 						root = (GridPane)loader.load();
@@ -164,7 +165,7 @@ public class albumPageController {
 		item1.setOnAction((ActionEvent e) ->{
 			Stage popupStage = new Stage();
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/view/moveToAlbumPopupView.fxml"));
+			loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/moveToAlbumPopupView.fxml"));
 			Pane root;
 			try {
 				root = (Pane)loader.load();
@@ -183,7 +184,7 @@ public class albumPageController {
 		item2.setOnAction((ActionEvent e) ->{
 			Stage popupStage = new Stage();
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/view/copyToAlbumPopupView.fxml"));
+			loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/copyToAlbumPopupView.fxml"));
 			Pane root;
 			try {
 				root = (Pane)loader.load();

@@ -3,6 +3,7 @@ package com.example.photogalleryapp.controllers;
 import com.example.photogalleryapp.models.albumModel;
 import com.example.photogalleryapp.models.photoModel;
 import com.example.photogalleryapp.models.userModel;
+import com.example.photogalleryapp.services.photosFileIO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,10 +41,10 @@ public class searchResultsPageController {
 	
 	public void logout(ActionEvent e) throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/loginPage.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/loginPage.fxml"));
 		GridPane root = (GridPane)loader.load();
-		
-		user.convert2TextFile();
+
+		photosFileIO.convertUserToTextFile(user);
 		
 		loginPageController loginPageController = loader.getController();
 		loginPageController.start(mainStage);
@@ -55,7 +56,7 @@ public class searchResultsPageController {
 	
 	public void goBack(ActionEvent e) throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/albumsPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/albumsPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
 		
 		albumsPageController albumsPageController = loader.getController();
@@ -75,7 +76,7 @@ public class searchResultsPageController {
 		newAlbum.setPhotos(photos);
 		user.addAlbum(newAlbum);
 		errorLabel.setText("Created Album " + albumNameField.getText());
-		user.convert2TextFile();
+		photosFileIO.convertUserToTextFile(user);
 	}
 	
 	private void populatePhotoGallery() throws FileNotFoundException {

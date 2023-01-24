@@ -61,7 +61,7 @@ public class loginPageController {
 	
 	private void switch2UserSubSystem(userModel user) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/albumsPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/albumsPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
 		
 		albumsPageController albumsPageController = loader.getController();
@@ -74,7 +74,7 @@ public class loginPageController {
 	
 	private void switch2AdminSubSystem() throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/view/adminPageView.fxml"));
+		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/adminPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
 		
 		adminPageController adminPageController = loader.getController();

@@ -85,7 +85,6 @@ public class addPhotoPopupController {
 		if(tagName != null && !(tagName.equals("New Single Val Tag") || tagName.equals("New Multi Val Tag"))){
 			if(!tagVal.isEmpty() && photo != null) {
 				photo.addTag(tagName, tagVal);
-				System.out.println(photo.getTags().size());
 				displayTagsLabel();
 			}
 		}
