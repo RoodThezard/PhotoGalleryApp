@@ -1,8 +1,6 @@
 package com.example.photogalleryapp.services;
 
 import java.io.*;
-import java.lang.reflect.Array;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,7 +9,7 @@ import com.example.photogalleryapp.models.albumModel;
 import com.example.photogalleryapp.models.photoModel;
 import com.example.photogalleryapp.models.userModel;
 
-public class photosFileIO {
+public class usersTextFileStream {
 	private static String dataDir = "./src/com/example/photogalleryapp/data/";
 
 	public static ArrayList<userModel> getData() throws IOException {

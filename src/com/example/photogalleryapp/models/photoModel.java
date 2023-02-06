@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class photoModel {
+public class photoModel implements java.io.Serializable{
 	public static ArrayList<String> singleValTagTypes = new ArrayList<String>(Arrays.asList("Location"));
 	public static ArrayList<String> multiValTagTypes = new ArrayList<String>(Arrays.asList("Person"));
 	public String url;

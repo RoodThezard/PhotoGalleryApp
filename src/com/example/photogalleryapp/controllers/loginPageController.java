@@ -1,7 +1,8 @@
 package com.example.photogalleryapp.controllers;
 
 import com.example.photogalleryapp.models.userModel;
-import com.example.photogalleryapp.services.photosFileIO;
+import com.example.photogalleryapp.services.usersSerializer;
+import com.example.photogalleryapp.services.usersTextFileStream;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,7 +53,7 @@ public class loginPageController {
 	
 	public void storeData() {
 		try {
-			photosFileIO.storeData(users);
+			usersTextFileStream.storeData(users);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -87,22 +88,29 @@ public class loginPageController {
 	
 	private void populateUsersList(){
 		try {
-			users = photosFileIO.getData();
+			users = usersSerializer.getData();
+
 		}catch(IOException e) {
-			users = new ArrayList<userModel>();
+			try {
+				users = usersTextFileStream.getData();
+			}catch(IOException i) {
+				users = new ArrayList<userModel>();
+			}
 		}
 		
 	}
 	
 	private void closeWindowEvent(WindowEvent event) {
-		/*TODO call SongLibraryFileIO.songListToFile() with songList as argument
-		 * 
-		 */
 		try {
-			photosFileIO.storeData(users);
+			usersSerializer.storeData(users);
         }
         catch(Exception c) {
-            return;
+			try {
+				usersTextFileStream.storeData(users);
+			}
+			catch(Exception e) {
+				return;
+			}
         }
 	}
 }

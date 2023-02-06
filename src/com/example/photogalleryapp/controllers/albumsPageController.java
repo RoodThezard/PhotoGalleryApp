@@ -2,7 +2,7 @@ package com.example.photogalleryapp.controllers;
 
 import com.example.photogalleryapp.models.albumModel;
 import com.example.photogalleryapp.models.userModel;
-import com.example.photogalleryapp.services.photosFileIO;
+import com.example.photogalleryapp.services.usersTextFileStream;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -43,8 +43,6 @@ public class albumsPageController {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/createAlbumPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
-
-		photosFileIO.convertUserToTextFile(user);
 		
 		createAlbumPageController createAlbumPageController = loader.getController();
 		createAlbumPageController.start(mainStage, user);

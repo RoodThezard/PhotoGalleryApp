@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class albumModel {
+public class albumModel implements java.io.Serializable{
 	private String albumName;
 	private ArrayList<photoModel> photos;
 	private long beginDate = 0;

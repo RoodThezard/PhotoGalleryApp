@@ -1,7 +1,8 @@
 package com.example.photogalleryapp.controllers;
 
 import com.example.photogalleryapp.models.userModel;
-import com.example.photogalleryapp.services.photosFileIO;
+import com.example.photogalleryapp.services.usersSerializer;
+import com.example.photogalleryapp.services.usersTextFileStream;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,8 +34,13 @@ public class adminPageController {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/loginPageView.fxml"));
 		GridPane root = (GridPane)loader.load();
-		
-		photosFileIO.storeData(users);
+
+		try {
+			usersSerializer.storeData(users);
+		}
+		catch(Exception c) {
+			usersTextFileStream.storeData(users);
+		}
 		
 		loginPageController loginPageController = loader.getController();
 		loginPageController.start(mainStage);

@@ -4,7 +4,7 @@ import java.io.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class userModel {
+public class userModel implements java.io.Serializable{
 	private String userName;
 	private ArrayList<albumModel> albums;
 

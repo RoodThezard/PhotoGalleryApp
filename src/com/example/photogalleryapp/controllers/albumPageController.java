@@ -3,7 +3,7 @@ package com.example.photogalleryapp.controllers;
 import com.example.photogalleryapp.models.albumModel;
 import com.example.photogalleryapp.models.photoModel;
 import com.example.photogalleryapp.models.userModel;
-import com.example.photogalleryapp.services.photosFileIO;
+import com.example.photogalleryapp.services.usersTextFileStream;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -47,8 +47,6 @@ public class albumPageController {
 		loader.setLocation(getClass().getResource("/com/example/photogalleryapp/views/loginPageView.fxml"));
 		GridPane root = loader.load();
 
-		photosFileIO.convertUserToTextFile(user);
-		
 		loginPageController loginPageController = loader.getController();
 		loginPageController.start(mainStage);
 		
